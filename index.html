@@ -12,13 +12,27 @@
   </head>
   <body>
     <h1>Form Snippet Library</h1>
-
-    <!-- if you need to show copy-pastable code, you can use the following-->
-    <!--<pre><code class="language-html"><input type=""></code></pre>-->
+    <article>
+      <h2>Basic Forms</h2>
+      <pre><code class="language-html">
+        <fieldset>
+          <legend>Resgistration</legend>
+            <form action="greeting.html" method="post">
+              <label for="name">Name</label>
+              <input id="name">
+              <label for="email">Email</label>
+              <input id="email">
+            </form>
+        </fieldset>
+      </code></pre>
+    </article>
   </body>
   <script>
     document.querySelectorAll("pre code").forEach((el) => {
+      const eg = document.createElement("div");
       el.textContent = el.innerHTML;
+      eg.innerHTML = el.textContent;
+      el.parentNode.parentNode.append(eg);
     });
   </script>
 </html>
