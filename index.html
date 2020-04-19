@@ -17,6 +17,7 @@
   </head>
   <body>
     <h1>Form Snippet Library</h1>
+    <nav><ol></ol></nav>
     <article id="basic_forms">
       <h2>Basic Forms</h2>
       <pre><code class="language-html">
@@ -97,6 +98,15 @@
     </article>
   </body>
   <script>
+    document.querySelectorAll("article h2").forEach((el) => {
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      a.href = "#" + el.textContent.toLowerCase().replace(/ /g, "_");
+      a.textContent = el.textContent;
+      li.appendChild(a);
+      document.querySelector("nav ol").appendChild(li);
+    });
+
     document.querySelectorAll("pre code").forEach((el) => {
       const eg = document.createElement("div");
       el.textContent = el.innerHTML;
