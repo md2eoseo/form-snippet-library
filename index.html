@@ -9,19 +9,88 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/themes/prism.min.css"
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/prism.min.js"></script>
+    <style>
+      article {
+        margin: 20px 30px;
+      }
+    </style>
   </head>
   <body>
     <h1>Form Snippet Library</h1>
-    <article>
+    <article id="basic_forms">
       <h2>Basic Forms</h2>
       <pre><code class="language-html">
         <fieldset>
           <legend>Resgistration</legend>
-            <form action="greeting.html" method="post">
-              <label for="name">Name</label>
-              <input id="name">
+            <form>
+              <label for="text">Text</label>
+              <input type="text" id="text">
+            </form>
+        </fieldset>
+      </code></pre>
+    </article>
+    <article id="basic_form_inputs">
+      <h2>Basic Form Inputs</h2>
+      <pre><code class="language-html">
+        <fieldset>
+          <legend>Resgistration</legend>
+            <form>
+              <label for="text">Text</label>
+              <input type="text" id="text">
+              <label for="message">Message</label>
+              <textarea id="message">Hello world!</textarea>
+              <label for="number">Number</label>
+              <input type="number" id="number" min="0" max="1" step="0.1">
               <label for="email">Email</label>
-              <input id="email">
+              <input type="email" id="email" required>
+              <label for="url">URL</label>
+              <input type="url" id="url" placeholder="http://example.com" required>
+              <label for="password">Password</label>
+              <input type="password" id="password" minlength="8">
+              <label for="tel">Tel</label>
+              <input type="tel" id="tel">
+              <label for="province">Province</label>
+              <select id="province">
+                <optgroup label="Canada">
+                  <option>Ontario</option>
+                  <option>Québec</option>
+                </optgroup>
+                <optgroup label="United States">
+                  <option>New York</option>
+                  <option>California</option>
+                </optgroup>
+              </select>
+              <fieldset>
+                <legend>What do you have?</legend>
+                <input type="checkbox" id="orange" checked>
+                <label for="orange">orange</label>
+                <input type="checkbox" id="banana">
+                <label for="banana">banana</label>
+                <input type="checkbox" id="peach">
+                <label for="peach">peach</label>
+              </fieldset>
+              <fieldset>
+                <legend>What’s your favourite colour?</legend>
+                <input type="radio" id="green" name="fav-color" checked>
+                <label for="green">Green</label>
+                <input type="radio" id="light-green" name="fav-color">
+                <label for="light-green">Light Green</label>
+                <input type="radio" id="dark-green" name="fav-color">
+                <label for="dark-green">Dark Green</label>
+              </fieldset>
+              <label for="time">Time</label>
+              <input type="time" id="time">
+              <label for="date">Date</label>
+              <input type="date" id="date">
+              <label for="range">Range</label>
+              <input type="range" id="range">
+              <label for="color">Color</label>
+              <input type="color" id="color">
+              <label for="file">File</label>
+              <input type="file" id="file" multiple>
+              <label for="search">Search</label>
+              <input type="search" id="search">
+              <input type="submit" id="submit">
             </form>
         </fieldset>
       </code></pre>
